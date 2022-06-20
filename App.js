@@ -2,20 +2,19 @@ import React,{useState, useEffect} from "react";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, Button } from "react-native";
 import { Provider } from "react-native-paper";
-import ButtomSheet from "./button-sheet/ButtonSheet";
+import BottomSheet from "./botton-sheet/BottonSheet";
 export default function App() {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
   return (
     <Provider>
       <View style={styles.container}>
         <Button title="Show Bottom Sheet" onPress={() => setShow(true)} />
-        <ButtomSheet
+        <BottomSheet
           show={show}
           onDismiss={() => {
             setShow(false);
-
           }}
-        ></ButtomSheet>
+        ></BottomSheet>
         <StatusBar style="auto" />
       </View>
     </Provider>
@@ -25,7 +24,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#ccc",
     alignItems: "center",
     justifyContent: "center",
   },
